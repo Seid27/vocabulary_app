@@ -1,0 +1,30 @@
+
+extends layout
+
+block content
+
+    //- get data passed
+    -data = data || {}
+
+    //- if there are errors from express validtor
+    //-  print the errors on the page
+    if errors
+        ul
+            for error in errors
+                li= error.msg
+                li= data
+                
+
+    form(action="." method="POST")
+
+        label Word
+        input(type="text" id="word" name="word" value=data.word)
+
+        label Text
+        textarea(id="text", row="100", col="50", name="text" value=data.text)
+
+        br
+        label Meaning
+        textarea(id="meaning", cols="50", rows="10", name="meaning" value=data.meaning)
+        br
+        button(type="submit") Add
