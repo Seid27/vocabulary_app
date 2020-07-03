@@ -1,0 +1,9 @@
+extends layout
+
+block content
+    h1= msg
+
+    form(action='/' method='GET')
+        button(type='submit') Home
+    form(action='/add' method='GET')
+        button(type='submit') Add to vocabulary

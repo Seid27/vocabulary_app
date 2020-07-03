@@ -3,6 +3,9 @@ extends layout
 
 block content
 
+    form(action='/' method='GET')
+        button(type='submit') Home
+
     //- get data passed
     -data = data || {}
 
@@ -15,7 +18,7 @@ block content
                 li= data
                 
 
-    form(action="." method="POST")
+    form(action="/add" method="POST")
 
         label Word
         input(type="text" id="word" name="word" value=data.word)
@@ -27,4 +30,4 @@ block content
         label Meaning
         textarea(id="meaning", cols="50", rows="10", name="meaning" value=data.meaning)
         br
-        button(type="submit") Add
+        button(type="submit") Add to vocabulary
